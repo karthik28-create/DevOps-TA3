@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertainment Hub | Movies & TV Shows</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-film"></i>
+                <span>EntertainmentHub</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#movies">Movies</a></li>
+                    <li><a href="#tv-shows">TV Shows</a></li>
+                    <li><a href="#trending">Trending</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="Search movies, TV shows...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Entertainment Hub</h1>
+            <p>Discover thousands of movies and TV shows to watch anytime, anywhere</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Explore Now</button>
+                <button class="btn-secondary">Watch Trailer <i class="fas fa-play"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movies Section -->
+    <section id="movies" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Movies</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="movies-grid" id="moviesContainer">
+                <!-- Movies will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- TV Shows Section -->
+    <section id="tv-shows" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular TV Shows</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="tvshows-grid" id="tvShowsContainer">
+                <!-- TV Shows will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Section -->
+    <section id="trending" class="section trending-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trending This Week</h2>
+                <div class="trending-tabs">
+                    <button class="tab-btn active" data-tab="movies-tab">Movies</button>
+                    <button class="tab-btn" data-tab="tv-tab">TV Shows</button>
+                </div>
+            </div>
+            <div class="trending-content">
+                <div class="tab-content active" id="movies-tab">
+                    <div class="trending-slider">
+                        <!-- Trending movies will be loaded here by JavaScript -->
+                    </div>
+                </div>
+                <div class="tab-content" id="tv-tab">
+                    <div class="trending-slider">
+                        <!-- Trending TV shows will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section id="subscribe" class="subscribe-section">
+        <div class="container">
+            <div class="subscribe-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates on movies, TV shows, and exclusive content straight to your inbox.</p>
+                <form id="subscribeForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>EntertainmentHub</h3>
+                    <p>Your ultimate destination for movies and TV shows. Watch anytime, anywhere.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#movies">Movies</a></li>
+                        <li><a href="#tv-shows">TV Shows</a></li>
+                        <li><a href="#trending">Trending</a></li>
+                        <li><a href="#subscribe">Subscribe</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Help</h3>
+                    <ul>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Plans</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 EntertainmentHub. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookies Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Movie/TV Show Details -->
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-poster">
+                    <img id="modalPoster" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <div class="meta-info">
+                        <span id="modalYear"></span>
+                        <span id="modalRuntime"></span>
+                        <span id="modalRating"></span>
+                    </div>
+                    <p id="modalPlot"></p>
+                    <div class="modal-genres" id="modalGenres"></div>
+                    <button class="btn-primary watch-btn">
+                        <i class="fas fa-play"></i> Watch Now
+                    </button>
+                    <button class="btn-secondary trailer-btn">
+                        <i class="fas fa-film"></i> Play Trailer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
